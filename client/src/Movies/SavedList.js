@@ -1,4 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+// function returnHome(props) {
+//     props.history.push('/');
+// }
 
 const SavedList = props => (
   <div className="saved-list">
@@ -6,7 +11,12 @@ const SavedList = props => (
     {props.list.map(movie => (
       <span className="saved-movie">{movie.title}</span>
     ))}
-    <div className="home-button">Home</div>
+    {/* <button onClick={returnHome} className="home-button">Home</button> */}
+    <div className="home-button">
+      <Link to='/'>
+      Home
+      </Link>
+    </div>
   </div>
 );
 

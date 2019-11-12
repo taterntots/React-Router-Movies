@@ -24,6 +24,7 @@ const MovieList = props => {
       {movies.map(movie => (
         <Link to={`/movies/${movie.id}`}>
           <MovieDetails key={movie.id} movie={movie} />
+          {/* <div onClick={() => routeToMovie(props, movie)}></div> */}
         </Link>
       ))}
     </div>
@@ -51,5 +52,9 @@ function MovieDetails({ movie }) {
     </div>
   );
 }
+
+// function routeToMovie(props, movie) {
+//   props.history.push(`/movies/${movie.id}`);
+// }
 
 export default MovieList;

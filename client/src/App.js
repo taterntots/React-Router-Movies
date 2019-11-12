@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Route, Switch, useParams } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+
 import SavedList from './Movies/SavedList';
 import Movie from './Movies/Movie';
 import MovieList from './Movies/MovieList';
@@ -16,14 +17,10 @@ const App = () => {
       <SavedList list={savedList} />
       <Route exact path='/' component={MovieList} />
       <Switch>
-  <Route path='/movies/:dataID' render={props => <Movie {...props}/> }/>
+  <Route path='/movies/:dataID' render={props => <Movie {...props} addToSavedList={addToSavedList}/> }/>
       </Switch>
     </div>
   );
 };
-
-// function Child() {
-//   let { dataID } = useParams();
-// }
 
 export default App;
